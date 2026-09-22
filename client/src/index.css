@@ -9,16 +9,21 @@
     color-scheme: dark;
   }
 
+  * {
+    -webkit-tap-highlight-color: transparent;
+  }
+
   body {
     @apply bg-bg-primary text-text-main font-sans antialiased selection:bg-accent-primary selection:text-white;
     min-height: 100vh;
     overflow-x: hidden;
+    touch-action: manipulation;
   }
 
   /* Custom scrollbars */
   ::-webkit-scrollbar {
-    width: 8px;
-    height: 8px;
+    width: 6px;
+    height: 6px;
   }
   ::-webkit-scrollbar-track {
     background: #070B14;

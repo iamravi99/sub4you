@@ -4,6 +4,7 @@ import { AuthProvider } from './context/AuthContext';
 import { ToastProvider } from './context/ToastContext';
 import { Header } from './components/layout/Header';
 import { Footer } from './components/layout/Footer';
+import { MobileBottomNav } from './components/layout/MobileBottomNav';
 import { ProtectedRoute } from './components/auth/ProtectedRoute';
 import { AdminRoute } from './components/auth/AdminRoute';
 
@@ -40,10 +41,11 @@ const MainLayout: React.FC = () => {
   return (
     <div className="min-h-screen flex flex-col bg-bg-primary text-text-main font-sans selection:bg-accent-primary selection:text-white">
       <Header />
-      <main className="flex-1">
+      <main className="flex-1 pb-20 md:pb-0">
         <Outlet />
       </main>
       <Footer />
+      <MobileBottomNav />
     </div>
   );
 };
