@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Sparkles, Shield, Heart } from 'lucide-react';
+import { TelegramIcon } from '../common/TelegramIcon';
 import { YouTubeIcon } from '../common/YouTubeIcon';
 
 export const Footer: React.FC = () => {
@@ -48,10 +49,20 @@ export const Footer: React.FC = () => {
             </ul>
           </div>
 
-          {/* Legal / Policy */}
+          {/* Community & Support */}
           <div>
-            <h4 className="text-sm font-semibold text-white mb-3">Community & Terms</h4>
+            <h4 className="text-sm font-semibold text-white mb-3">Support & Community</h4>
             <ul className="space-y-2 text-xs">
+              <li>
+                <a
+                  href="https://t.me/Desi_infinity_studio"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-[#229ED9] hover:text-white font-semibold flex items-center gap-1.5 transition"
+                >
+                  <TelegramIcon className="w-3.5 h-3.5" /> Telegram: @Desi_infinity_studio
+                </a>
+              </li>
               <li>
                 <span className="hover:text-white cursor-pointer transition">Community Guidelines</span>
               </li>
@@ -60,9 +71,6 @@ export const Footer: React.FC = () => {
               </li>
               <li>
                 <span className="hover:text-white cursor-pointer transition">Terms of Service</span>
-              </li>
-              <li>
-                <span className="hover:text-white cursor-pointer transition">YouTube API Services Terms</span>
               </li>
             </ul>
           </div>

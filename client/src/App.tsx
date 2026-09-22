@@ -5,6 +5,7 @@ import { ToastProvider } from './context/ToastContext';
 import { Header } from './components/layout/Header';
 import { Footer } from './components/layout/Footer';
 import { MobileBottomNav } from './components/layout/MobileBottomNav';
+import { TelegramFloatingButton } from './components/common/TelegramFloatingButton';
 import { ProtectedRoute } from './components/auth/ProtectedRoute';
 import { AdminRoute } from './components/auth/AdminRoute';
 
@@ -46,6 +47,7 @@ const MainLayout: React.FC = () => {
       </main>
       <Footer />
       <MobileBottomNav />
+      <TelegramFloatingButton />
     </div>
   );
 };

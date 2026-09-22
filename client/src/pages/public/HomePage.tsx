@@ -15,6 +15,7 @@ import {
   Flame,
   HelpCircle,
 } from 'lucide-react';
+import { TelegramIcon } from '../../components/common/TelegramIcon';
 import { YouTubeIcon } from '../../components/common/YouTubeIcon';
 import { Button } from '../../components/common/Button';
 import { Card } from '../../components/common/Card';
@@ -88,9 +89,18 @@ export const HomePage: React.FC = () => {
             )}
             <Link to="/discover">
               <Button size="lg" variant="secondary" leftIcon={<Flame className="w-5 h-5 text-amber-400" />}>
-                Explore Active Campaigns
+                Explore Campaigns
               </Button>
             </Link>
+            <a
+              href="https://t.me/Desi_infinity_studio"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 px-6 py-3 rounded-2xl bg-[#229ED9]/15 border border-[#229ED9]/30 hover:bg-[#229ED9]/25 text-[#229ED9] hover:text-white font-bold text-sm transition-all duration-200 active:scale-95 shadow-glow"
+            >
+              <TelegramIcon className="w-5 h-5" />
+              <span>Telegram Support</span>
+            </a>
           </div>
 
           {/* Stats Bar */}
@@ -275,6 +285,41 @@ export const HomePage: React.FC = () => {
                   <span className="text-amber-400">+1.00 COIN → PARTICIPANT</span>
                 </div>
               </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* TELEGRAM CONTACT & COMMUNITY BANNER */}
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="rounded-3xl border border-[#229ED9]/30 bg-gradient-to-r from-[#0D1829] via-[#0E1F38] to-[#0A192F] p-8 sm:p-12 relative overflow-hidden shadow-2xl">
+          {/* Ambient cyan glow */}
+          <div className="absolute top-0 right-0 w-96 h-96 bg-[#229ED9]/15 blur-[120px] rounded-full pointer-events-none" />
+
+          <div className="flex flex-col md:flex-row items-center justify-between gap-8 relative z-10">
+            <div className="space-y-3 text-center md:text-left max-w-xl">
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#229ED9]/15 border border-[#229ED9]/30 text-xs font-bold text-[#229ED9]">
+                <TelegramIcon className="w-4 h-4" />
+                <span>Direct Support & Creator Community</span>
+              </div>
+              <h3 className="text-2xl sm:text-3xl font-black text-white font-['Outfit'] tracking-tight">
+                Need Help or Custom Campaign Packages?
+              </h3>
+              <p className="text-xs sm:text-sm text-text-muted leading-relaxed">
+                Connect directly with our platform leadership and support team on Telegram. Fast support, custom coin orders, and channel growth tips.
+              </p>
+            </div>
+
+            <div className="flex flex-col sm:flex-row items-center gap-3 shrink-0">
+              <a
+                href="https://t.me/Desi_infinity_studio"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center justify-center gap-3 px-8 py-4 rounded-2xl bg-gradient-to-r from-[#229ED9] to-[#0088cc] hover:from-[#1e8bc0] hover:to-[#0077b5] text-white font-black text-sm shadow-xl shadow-cyan-500/20 active:scale-95 transition-all duration-200"
+              >
+                <TelegramIcon className="w-6 h-6" />
+                <span>Contact @Desi_infinity_studio</span>
+              </a>
             </div>
           </div>
         </div>
