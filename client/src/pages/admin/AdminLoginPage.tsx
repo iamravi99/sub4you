@@ -11,8 +11,8 @@ export const AdminLoginPage: React.FC = () => {
   const { login, devLogin } = useAuth();
   const toast = useToast();
 
-  const [email, setEmail] = useState('ravinder.explore@gmail.com');
-  const [password, setPassword] = useState('9991141758');
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
   const [isLoading, setIsLoading] = useState(false);
 
   const handleAdminLogin = async (e: React.FormEvent) => {
@@ -26,20 +26,11 @@ export const AdminLoginPage: React.FC = () => {
     try {
       const cleanEmail = email.trim().toLowerCase();
 
-      // Check if credentials match primary admin
+      // Verify administrative credentials
       if (cleanEmail === 'ravinder.explore@gmail.com' && password.trim() === '9991141758') {
         localStorage.setItem('sub4you_admin_key', '9991141758');
         await devLogin('ravinder.explore@gmail.com', 'Ravinder (Administrator)', 'admin');
         toast.success('Admin authentication verified. Welcome, Ravinder!');
-        navigate('/admin', { replace: true });
-        return;
-      }
-
-      // If other email, attempt login with Firebase
-      if (cleanEmail === 'ravinder.explore@gmail.com') {
-        localStorage.setItem('sub4you_admin_key', '9991141758');
-        await devLogin('ravinder.explore@gmail.com', 'Ravinder (Administrator)', 'admin');
-        toast.success('Admin authentication verified!');
         navigate('/admin', { replace: true });
         return;
       }
@@ -83,9 +74,10 @@ export const AdminLoginPage: React.FC = () => {
                 <input
                   type="email"
                   required
+                  placeholder="admin@example.com"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
-                  className="w-full pl-10 pr-4 py-2.5 rounded-xl bg-bg-primary border border-border-subtle text-xs text-text-main focus:outline-none focus:border-accent-primary"
+                  className="w-full pl-10 pr-4 py-2.5 rounded-xl bg-bg-primary border border-border-subtle text-xs text-text-main placeholder:text-text-dim focus:outline-none focus:border-accent-primary"
                 />
                 <Mail className="w-4 h-4 text-text-dim absolute left-3.5 top-1/2 -translate-y-1/2" />
               </div>
@@ -97,17 +89,13 @@ export const AdminLoginPage: React.FC = () => {
                 <input
                   type="password"
                   required
+                  placeholder="••••••••••••"
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
-                  className="w-full pl-10 pr-4 py-2.5 rounded-xl bg-bg-primary border border-border-subtle text-xs text-text-main focus:outline-none focus:border-accent-primary font-mono"
+                  className="w-full pl-10 pr-4 py-2.5 rounded-xl bg-bg-primary border border-border-subtle text-xs text-text-main placeholder:text-text-dim focus:outline-none focus:border-accent-primary font-mono"
                 />
                 <Lock className="w-4 h-4 text-text-dim absolute left-3.5 top-1/2 -translate-y-1/2" />
               </div>
-            </div>
-
-            <div className="p-3 rounded-xl bg-indigo-500/10 border border-indigo-500/20 text-xs text-indigo-300 flex items-center gap-2">
-              <KeyRound className="w-4 h-4 shrink-0 text-indigo-400" />
-              <span>Default Credentials configured: <strong>ravinder.explore@gmail.com</strong></span>
             </div>
 
             <Button

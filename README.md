@@ -76,11 +76,9 @@ Visit:
 
 ---
 
-## Admin Portal Access
+## Admin Portal
 
-- **Route**: `/admin/login`
-- **Default Email**: `ravinder.explore@gmail.com`
-- **Default Key**: `9991141758`
+The administrative control panel is restricted to authorized platform administrators and accessible at `/admin/login`.
 
 ---
 
