@@ -29,7 +29,8 @@ export const LoginPage: React.FC = () => {
     try {
       await login(email, password);
       toast.success('Welcome back!');
-      navigate(from, { replace: true });
+      const destination = from && from !== '/' && from !== '/login' ? from : '/dashboard';
+      navigate(destination, { replace: true });
     } catch (err: any) {
       toast.error(err.message || 'Login failed. Please check your credentials.');
     } finally {
@@ -41,7 +42,8 @@ export const LoginPage: React.FC = () => {
     try {
       await loginWithGoogle();
       toast.success('Signed in with Google!');
-      navigate(from, { replace: true });
+      const destination = from && from !== '/' && from !== '/login' ? from : '/dashboard';
+      navigate(destination, { replace: true });
     } catch (err: any) {
       toast.error(err.message || 'Google sign in failed');
     }
